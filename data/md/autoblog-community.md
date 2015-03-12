@@ -1,1 +1,1 @@
-Created a user generated content platform, in-depth discussions, quick chats, and photo sharing. Integrated graph database into platform architecture with voting system and rating algorithms for hot content and comment sorting.
+Created a user generated content platform, in-depth discussions, quick chats, and photo sharing. Integrated graph database into platform architecture with voting system and rating algorithms for hot content and comment sorting. 
