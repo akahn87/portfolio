@@ -1,0 +1,71 @@
+{
+    "portfolio": {
+        "img": "none",
+        "title": "Portfolio",
+        "date": "Winter 2015",
+        "client": {
+            "text": "None"
+        },
+        "site": {
+            "text": "github.com",
+            "href": ""
+        },
+        "tags": [
+            "Node.js",
+            "npm",
+            "Automation",
+            "Hapi",
+            "Unix",
+            "HTML5",
+            "CSS3",
+            "Responsive",
+            "Codeship",
+            "Dokku",
+            "Docker"
+        ]
+    },
+    "autoblog": {
+        "img": "/static/img/autoblog.jpg",
+        "title": "Autoblog Rewrite",
+        "date": "Winter 2014",
+        "client": {
+            "text": "None"
+        },
+        "site": {
+            "text": "autoblog.com",
+            "href": "http://www.autoblog.com/"
+        },
+        "tags": [
+            "Agile",
+            "JavaScript",
+            "Responsive",
+            "Gulp",
+            "HTML5",
+            "CSS3",
+            "Jenkins",
+            "Chef"
+        ]
+    },
+    "autoblog-community": {
+        "img": "/static/img/autoblog-community.jpg",
+        "title": "Autoblog Community",
+        "date": "Winter 2014",
+        "client": {
+            "text": "None"
+        },
+        "site": {
+            "text": "autoblog.com/forum/",
+            "href": "http://www.autoblog.com/forum/"
+        },
+        "tags": [
+            "Agile",
+            "JavaScript",
+            "Responsive",
+            "Gulp",
+            "HTML5",
+            "CSS3",
+            "Jenkins",
+            "Chef"
+        ]
+    }
+}
