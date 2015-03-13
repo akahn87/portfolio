@@ -3,7 +3,7 @@ var hapi = require('hapi');
 var server = new hapi.Server();
 
 server.connection({
-    port: process.env.PORT || 80
+    port: process.env.PORT || 3000
 });
 
 server.views({
