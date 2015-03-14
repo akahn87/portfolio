@@ -1,6 +1,6 @@
 {
     "portfolio": {
-        "img": "portfolio.jpg",
+        "img": "/static/img/portfolio.jpg",
         "title": "Portfolio",
         "date": "Winter 2015",
         "client": {
