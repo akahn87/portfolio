@@ -8,7 +8,7 @@
     "lint:server": "jshint --config .jshintrc-server index.js routes services data",
     "lint:client": "jshint --config .jshintrc-client client-js",
     "test": "npm run lint",
-    "start": ".source .env && forever -m --minUptime 5000 --spinSleepTime 5000 index.js",
+    "start": "source .env && forever -m --minUptime 5000 --spinSleepTime 5000 index.js",
     "start:dev": "parallelshell 'npm run devserver' 'npm run build:js:watch'",
     "devserver": "export $(cat .env|xargs) && nodemon -e js,hbs,md,json index.js",
     "optimise": "uglifyjs -c -o public/js/index.js -- public/js/index.js",
