@@ -1,5 +1,5 @@
 npm-debug.log
 node_modules/
 public/js/*
-Procfile
 .env
+Procfile
