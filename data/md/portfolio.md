@@ -7,4 +7,4 @@ a Node.js [Hapi](https://github.com/hapijs/hapi) backend and
 
 I'm really pleased with the way it turned out. The code-base is small and easily comprehensible, it
 only took me a few days to build and zero-downtime Docker-based deployments to a $5 server are just
-a `git push` away!
+a `git push` away.
