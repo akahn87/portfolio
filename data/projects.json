@@ -1,4 +1,46 @@
 {
+    "alura": {
+        "img": "",
+        "title": "Alura",
+        "date": "Summer 2015",
+        "client": {
+            "text": "None"
+        },
+        "site": {
+            "text": "github.com/akahn87/alura",
+            "href": ""
+        },
+        "tags": [
+            "ES6",
+            "JavaScript",
+            "gulp",
+            "npm",
+            "Karma",
+            "Webpack"
+        ]
+    },
+    "aoldotcom": {
+        "img": "/static/img/aoldotcom.jpg",
+        "title": "AOL.com Redesign",
+        "date": "Summer 2015",
+        "client": {
+            "text": "None"
+        },
+        "site": {
+            "text": "aol.com/new/",
+            "href": ""
+        },
+        "tags": [
+            "Agile",
+            "npm",
+            "gulp",
+            "sass",
+            "HTML5",
+            "CSS3",
+            "Responsive",
+            "Jenkins"
+        ]
+    },
     "portfolio": {
         "img": "/static/img/portfolio.jpg",
         "title": "Portfolio",
