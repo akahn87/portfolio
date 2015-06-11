@@ -7,8 +7,8 @@
             "text": "None"
         },
         "site": {
-            "text": "github.com/akahn87/alura",
-            "href": ""
+            "text": "github.com",
+            "href": "https://github.com/akahn87/alura"
         },
         "tags": [
             "ES6",
@@ -27,8 +27,8 @@
             "text": "None"
         },
         "site": {
-            "text": "aol.com/new/",
-            "href": ""
+            "text": "aol.com",
+            "href": "http://aol.com/new/"
         },
         "tags": [
             "Agile",
@@ -50,7 +50,7 @@
         },
         "site": {
             "text": "github.com",
-            "href": ""
+            "href": "https://github.com/akahn87/portfolio"
         },
         "tags": [
             "Node.js",
