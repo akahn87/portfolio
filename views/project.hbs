@@ -1,46 +1,46 @@
 <h1><a href="/" class="RollingLink"><span data-hover="Home">Home</span></a> / {{project.title}}</h1>
 {{#if project.img}}
-    <img src="{{project.img}}" class="ProjectImage">
+  <img src="{{project.img}}" class="ProjectImage">
 {{/if}}
 <div class="u-row">
-    <div class="u-col u-col2-3">
-        {{{project.description}}}
-    </div>
-    <div class="u-col u-col1-3">
-        <ul class="List">
-            <li>
-                <p>
-                    <span class="u-muted">Date</span> {{project.date}}
-                </p>
-            </li>
-            <li>
-                <p>
-                    <span class="u-muted">Site</span>
-                    {{#if project.site.href}}
-                        <a href="{{project.site.href}}" class="RollingLink"><span data-hover="{{project.site.text}}">{{project.site.text}}</span></a>
-                    {{else}}
-                        {{project.site.text}}
-                    {{/if}}
-                </p>
-            </li>
-            <li>
-                <p>
-                    <span class="u-muted">Client</span>
-                    {{#if project.client.href}}
-                        <a href="{{project.client.href}}" class="RollingLink"><span data-hover="{{project.client.text}}">{{project.client.text}}</span></a>
-                    {{else}}
-                        {{project.client.text}}
-                    {{/if}}
-                </p>
-            </li>
-        </ul>
-        <h2>Tags</h2>
-        <ul class="List">
-            {{#each project.tags}}
-            <li>
-                <p><span class="u-muted">+ {{.}}</span></p>
-            </li>
-            {{/each}}
-        </ul>
-    </div>
+  <div class="u-col u-col2-3">
+    {{{project.description}}}
+  </div>
+  <div class="u-col u-col1-3">
+    <ul class="List">
+      <li>
+        <p>
+          <span class="u-muted">Date</span> {{project.date}}
+        </p>
+      </li>
+      <li>
+        <p>
+          <span class="u-muted">Site</span>
+          {{#if project.site.href}}
+            <a href="{{project.site.href}}" class="RollingLink"><span data-hover="{{project.site.text}}">{{project.site.text}}</span></a>
+          {{else}}
+            {{project.site.text}}
+          {{/if}}
+        </p>
+      </li>
+      <li>
+        <p>
+          <span class="u-muted">Client</span>
+          {{#if project.client.href}}
+            <a href="{{project.client.href}}" class="RollingLink"><span data-hover="{{project.client.text}}">{{project.client.text}}</span></a>
+          {{else}}
+            {{project.client.text}}
+          {{/if}}
+        </p>
+      </li>
+    </ul>
+    <h2>Tags</h2>
+    <ul class="List">
+      {{#each project.tags}}
+      <li>
+        <p><span class="u-muted">+ {{.}}</span></p>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
 </div>
