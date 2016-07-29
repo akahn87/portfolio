@@ -1,113 +1,135 @@
 {
-    "alura": {
-        "img": "",
-        "title": "Alura",
-        "date": "Summer 2015",
-        "client": {
-            "text": "None"
-        },
-        "site": {
-            "text": "github.com",
-            "href": "https://github.com/akahn87/alura"
-        },
-        "tags": [
-            "ES6",
-            "JavaScript",
-            "gulp",
-            "npm",
-            "Karma",
-            "Webpack"
-        ]
+  "universal-javascript": {
+    "img": "",
+    "title": "Universal Javascript",
+    "date": "Winter 2015",
+    "client": {
+      "text": "Self"
     },
-    "aoldotcom": {
-        "img": "/static/img/aoldotcom.jpg",
-        "title": "AOL.com Redesign",
-        "date": "Summer 2015",
-        "client": {
-            "text": "None"
-        },
-        "site": {
-            "text": "aol.com",
-            "href": "http://aol.com/new/"
-        },
-        "tags": [
-            "Agile",
-            "npm",
-            "gulp",
-            "sass",
-            "HTML5",
-            "CSS3",
-            "Responsive",
-            "Jenkins"
-        ]
+    "site": {
+      "text": "github.com",
+      "href": "https://github.com/akahn87/"
     },
-    "portfolio": {
-        "img": "/static/img/portfolio.jpg",
-        "title": "Portfolio",
-        "date": "Winter 2015",
-        "client": {
-            "text": "None"
-        },
-        "site": {
-            "text": "github.com",
-            "href": "https://github.com/akahn87/portfolio"
-        },
-        "tags": [
-            "Node.js",
-            "npm",
-            "Automation",
-            "Hapi",
-            "Unix",
-            "HTML5",
-            "CSS3",
-            "Responsive",
-            "Codeship",
-            "Dokku",
-            "Docker"
-        ]
+    "tags": [
+      "Universal JavaScript",
+      "ES6",
+      "ES7",
+      "React",
+      "Flux",
+      "Redux",
+      "Reactive",
+      "Functional"
+    ]
+  },
+  "alura": {
+    "img": "",
+    "title": "Alura",
+    "date": "Summer 2015",
+    "client": {
+      "text": "None"
     },
-    "autoblog": {
-        "img": "/static/img/autoblog.jpg",
-        "title": "Autoblog Rewrite",
-        "date": "Winter 2014",
-        "client": {
-            "text": "None"
-        },
-        "site": {
-            "text": "autoblog.com",
-            "href": "http://www.autoblog.com/"
-        },
-        "tags": [
-            "Agile",
-            "JavaScript",
-            "Responsive",
-            "Gulp",
-            "HTML5",
-            "CSS3",
-            "Jenkins",
-            "Chef"
-        ]
+    "site": {
+      "text": "github.com",
+      "href": "https://github.com/akahn87/alura"
     },
-    "autoblog-community": {
-        "img": "/static/img/autoblog-community.jpg",
-        "title": "Autoblog Community",
-        "date": "Winter 2014",
-        "client": {
-            "text": "None"
-        },
-        "site": {
-            "text": "autoblog.com/forum/",
-            "href": "http://www.autoblog.com/forum/"
-        },
-        "tags": [
-            "Agile",
-            "JavaScript",
-            "Responsive",
-            "Gulp",
-            "HTML5",
-            "CSS3",
-            "Jenkins",
-            "Chef"
-        ]
-    }
+    "tags": [
+      "ES6",
+      "JavaScript",
+      "gulp",
+      "npm",
+      "Karma",
+      "Webpack"
+    ]
+  },
+  "aoldotcom": {
+    "img": "/static/img/aoldotcom.jpg",
+    "title": "AOL.com Redesign",
+    "date": "Summer 2015",
+    "client": {
+      "text": "None"
+    },
+    "site": {
+      "text": "aol.com",
+      "href": "http://aol.com/new/"
+    },
+    "tags": [
+      "Agile",
+      "npm",
+      "gulp",
+      "sass",
+      "HTML5",
+      "CSS3",
+      "Responsive",
+      "Jenkins"
+    ]
+  },
+  "portfolio": {
+    "img": "/static/img/portfolio.jpg",
+    "title": "Portfolio",
+    "date": "Winter 2015",
+    "client": {
+      "text": "None"
+    },
+    "site": {
+      "text": "github.com",
+      "href": "https://github.com/akahn87/portfolio"
+    },
+    "tags": [
+      "Node.js",
+      "npm",
+      "Automation",
+      "Hapi",
+      "Unix",
+      "HTML5",
+      "CSS3",
+      "Responsive",
+      "Codeship",
+      "Dokku",
+      "Docker"
+    ]
+  },
+  "autoblog": {
+    "img": "/static/img/autoblog.jpg",
+    "title": "Autoblog Rewrite",
+    "date": "Winter 2014",
+    "client": {
+      "text": "None"
+    },
+    "site": {
+      "text": "autoblog.com",
+      "href": "http://www.autoblog.com/"
+    },
+    "tags": [
+      "Agile",
+      "JavaScript",
+      "Responsive",
+      "Gulp",
+      "HTML5",
+      "CSS3",
+      "Jenkins",
+      "Chef"
+    ]
+  },
+  "autoblog-community": {
+    "img": "/static/img/autoblog-community.jpg",
+    "title": "Autoblog Community",
+    "date": "Winter 2014",
+    "client": {
+      "text": "None"
+    },
+    "site": {
+      "text": "autoblog.com/forum/",
+      "href": "http://www.autoblog.com/forum/"
+    },
+    "tags": [
+      "Agile",
+      "JavaScript",
+      "Responsive",
+      "Gulp",
+      "HTML5",
+      "CSS3",
+      "Jenkins",
+      "Chef"
+    ]
+  }
 }
