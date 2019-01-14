@@ -1,15 +1,15 @@
-var data = require('../data');
+const data = require('../data');
 
 module.exports = {
   method: 'GET',
   path: '/project/{slug}',
-  handler: function (request, reply) {
-    var project = data.getProject(request.params.slug);
+  handler({params}, reply) {
+    const project = data.getProject(params.slug);
 
     if ( project ) {
       reply.view('project', {
-        project: project,
-        subtitle: project.title + ' Project'
+        project,
+        subtitle: `${project.title} Project`
       });
     } else {
       reply.redirect('/');

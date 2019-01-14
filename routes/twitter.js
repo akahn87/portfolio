@@ -1,20 +1,20 @@
-var service = require('../services').twitter;
-var moment = require('moment');
-var twitterText = require('twitter-text');
+const service = require('../services').twitter;
+const moment = require('moment');
+const twitterText = require('twitter-text');
 
 module.exports = {
   method: 'GET',
   path: '/api/twitter',
-  handler: function (request, reply) {
-    service.call(function (err, res) {
-      if ( err ) return reply.code(500);
+  handler: async (request, h) => {
+    const res = await service.call();
+    if (!res) return {};
 
-      var tweet = res[0];
-      reply({
-        text: twitterText.autoLink(tweet.text),
-        time: moment(new Date(tweet.created_at)).fromNow(),
-        link: 'https://twitter.com/' + tweet.user.screen_name+'/status/' + tweet.id_str
-      });
-    });
+    const tweet = res.data[0];
+
+    return {
+      text: twitterText.autoLink(tweet.text),
+      time: moment(new Date(tweet.created_at)).fromNow(),
+      link: `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
+    };
   }
 };

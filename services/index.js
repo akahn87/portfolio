@@ -1,10 +1,9 @@
-var CachedService = require('./cached-service');
-var TwitterService = require('./twitter-service');
-var LastFmService = require('./lastfm-service');
-//var FoursquareService = require('./foursquare-service');
-var GitHubService = require('./github-service');
+const CachedService = require('./cached-service');
+const TwitterService = require('./twitter-service');
+const LastFmService = require('./lastfm-service');
+const GitHubService = require('./github-service');
 
-var twitter = new TwitterService();
+const twitter = new TwitterService();
 twitter.init({
   user: process.env.TWITTER_USER,
   consumerKey: process.env.TWITTER_CONSUMER_KEY,
@@ -13,37 +12,28 @@ twitter.init({
   tokenSecret: process.env.TWITTER_TOKEN_SECRET
 });
 
-var twitterCached = new CachedService();
+const twitterCached = new CachedService();
 twitterCached.init(twitter);
 
-var lastFm = new LastFmService();
+const lastFm = new LastFmService();
 lastFm.init({
   user: process.env.LASTFM_USER,
   key: process.env.LASTFM_KEY
 });
 
-var lastFmCached = new CachedService();
+const lastFmCached = new CachedService();
 lastFmCached.init(lastFm);
 
-// var foursquare = new FoursquareService();
-// foursquare.init({
-//   token: process.env.FOURSQUARE_TOKEN
-// });
-
-// var foursquareCached = new CachedService();
-// foursquareCached.init(foursquare);
-
-var github = new GitHubService();
+const github = new GitHubService();
 github.init({
   user: process.env.GITHUB_USER
 });
 
-var githubCached = new CachedService();
+const githubCached = new CachedService();
 githubCached.init(github);
 
 module.exports = {
   twitter: twitterCached,
   lastFm: lastFmCached,
-  //foursquare: foursquareCached,
   github: githubCached
 };

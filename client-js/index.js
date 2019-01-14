@@ -1,20 +1,18 @@
 'use strict';
 
-var xhr = require('xhr');
-var dom = require('ampersand-dom');
+const xhr = require('xhr');
+const dom = require('ampersand-dom');
 
-var twitterEl = document.querySelector('.js-twitter');
-var githubEl = document.querySelector('.js-github');
-var lastFmEl = document.querySelector('.js-lastfm');
-var foursquareEl = document.querySelector('.js-foursquare');
+const twitterEl = document.querySelector('.js-twitter');
+const githubEl = document.querySelector('.js-github');
+const lastFmEl = document.querySelector('.js-lastfm');
 
 xhr({uri: '/api/twitter', json: true}, makeHandler(twitterEl, updateTweet));
 xhr({uri: '/api/lastfm', json: true}, makeHandler(lastFmEl, updateLastFm));
-//xhr({uri: '/api/foursquare', json: true}, makeHandler(foursquareEl, updateFoursquare));
 xhr({uri: '/api/github', json: true}, makeHandler(githubEl, updateGitHub));
 
 function makeHandler (el, f) {
-  return function (err, res, body) {
+  return (err, res, body) => {
     if ( err ) return;
 
     dom.removeClass(el, 'u-hidden');
@@ -24,52 +22,43 @@ function makeHandler (el, f) {
 }
 
 function updateGitHub (el, body) {
-  var shaEl = el.querySelector('.js-sha');
-  var repoEl = el.querySelector('.js-repo');
-  var timeEl = el.querySelector('.js-time');
+  const shaEl = el.querySelector('.js-sha');
+  const repoEl = el.querySelector('.js-repo');
+  const timeEl = el.querySelector('.js-time');
 
-  shaEl.href = body.link;
-  repoEl.href = body.link;
+  if (Object.keys(body).length === 0) {
+    timeEl.textContent = 'nowhere public recently...';
+  }else {
+    shaEl.href = body.link;
+    repoEl.href = body.link;
 
-  shaEl.textContent = body.sha;
-  repoEl.textContent = body.repo;
-  timeEl.textContent = body.time;
+    shaEl.textContent = body.sha;
+    repoEl.textContent = body.repo;
+    timeEl.textContent = body.time;
+  }
 }
 
-function updateFoursquare (el, body) {
-  var venueEl = el.querySelector('.js-venue');
-  var cityEl = el.querySelector('.js-city');
-  var timeEl = el.querySelector('.js-time');
+function updateLastFm(el, {link, time, track, artist}) {
+  const verbStemEl = el.querySelector('.js-verb-stem');
+  const trackEl = el.querySelector('.js-track');
+  const artistEl = el.querySelector('.js-artist');
+  const timeEl = el.querySelector('.js-time');
 
-  venueEl.href = body.link;
-  cityEl.href = body.link;
+  trackEl.href = link;
+  artistEl.href = link;
 
-  venueEl.textContent = body.venue;
-  cityEl.textContent = body.city;
-  timeEl.textContent = body.time;
+  verbStemEl.textContent = time === 'now' ? 'ing' : 'ed';
+  trackEl.textContent = track;
+  artistEl.textContent = artist;
+  timeEl.textContent = time;
 }
 
-function updateLastFm (el, body) {
-  var verbStemEl = el.querySelector('.js-verb-stem');
-  var trackEl = el.querySelector('.js-track');
-  var artistEl = el.querySelector('.js-artist');
-  var timeEl = el.querySelector('.js-time');
+function updateTweet(el, {link, text, time}) {
+  const twitterTweetLinkEl = el.querySelector('.js-link');
+  const twitterTextEl = el.querySelector('.js-text');
+  const twitterTimeEl = el.querySelector('.js-time');
 
-  trackEl.href = body.link;
-  artistEl.href = body.link;
-
-  verbStemEl.textContent = body.time === 'now' ? 'ing' : 'ed';
-  trackEl.textContent = body.track;
-  artistEl.textContent = body.artist;
-  timeEl.textContent = body.time;
-}
-
-function updateTweet (el, body) {
-  var twitterTweetLinkEl = el.querySelector('.js-link');
-  var twitterTextEl = el.querySelector('.js-text');
-  var twitterTimeEl = el.querySelector('.js-time');
-
-  twitterTweetLinkEl.href = body.link;
-  twitterTextEl.innerHTML = '“' + body.text + '”';
-  twitterTimeEl.textContent = body.time;
+  twitterTweetLinkEl.href = link;
+  twitterTextEl.innerHTML = `“${text}”`;
+  twitterTimeEl.textContent = time;
 }

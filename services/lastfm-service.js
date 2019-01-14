@@ -1,30 +1,29 @@
-var request = require('request');
-var util = require('util');
+const fetch = require('node-fetch');
+const util = require('util');
 
-module.exports = LastFmService;
+class LastFmService {
+  init(ops) {
+    this.ops = ops;
 
-function LastFmService () {
+    this.endpoint = util.format(
+      '%s%s/2.0/?method=user.getrecenttracks&user=%s&api_key=%s&format=json&limit=1"',
+      'https://',
+      'ws.audioscrobbler.com',
+      this.ops.user,
+      this.ops.key
+    );
+  }
+
+  async call() {
+    try {
+      const res = await fetch(this.endpoint);
+      const json = await res.json();
+
+      return json;
+    } catch(err) {
+      return err;
+    }
+  }
 }
 
-LastFmService.prototype.init = function (ops) {
-  this.ops = ops;
-
-  this.endpoint = util.format(
-    '%s%s/2.0/?method=user.getrecenttracks&user=%s&api_key=%s&format=json&limit=1"',
-    'https://',
-    'ws.audioscrobbler.com',
-    this.ops.user,
-    this.ops.key
-  );
-};
-
-LastFmService.prototype.call = function (cb) {
-  request({
-    uri: this.endpoint,
-    json: true
-  }, function (err, res, body) {
-    if ( err ) return cb(err);
-
-    cb(null, body);
-  });
-};
+module.exports = LastFmService;

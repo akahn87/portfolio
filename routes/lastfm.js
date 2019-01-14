@@ -1,35 +1,34 @@
-var service = require('../services').lastFm;
-var moment = require('moment');
+const service = require('../services').lastFm;
+const moment = require('moment');
 
 module.exports = {
   method: 'GET',
   path: '/api/lastfm',
-  handler: function (request, reply) {
-    service.call(function (err, res) {
-      if ( err ) return reply.code(500);
+  handler: async (request, h) => {
+    const res = await service.call();
+    if (!res) return {};
 
-      var track;
+    let track;
 
-      if ( Array.isArray(res.recenttracks.track) ) {
-        track = res.recenttracks.track[0];
-      } else {
-        track = res.recenttracks.track;
-      }
+    if ( Array.isArray(res.recenttracks.track) ) {
+      track = res.recenttracks.track[0];
+    } else {
+      track = res.recenttracks.track;
+    }
 
-      var time;
+    let time;
 
-      if ( track['@attr'] && track['@attr'].nowplaying === 'true' ) {
-        time = 'now';
-      } else {
-        time = moment(new Date(track.date['#text'])).fromNow();
-      }
+    if ( track['@attr'] && track['@attr'].nowplaying === 'true' ) {
+      time = 'now';
+    } else {
+      time = moment(new Date(track.date['#text'])).fromNow();
+    }
 
-      reply({
-        track: track.name,
-        artist: track.artist['#text'],
-        link: track.url,
-        time: time
-      });
-    });
+    return {
+      track: track.name,
+      artist: track.artist['#text'],
+      link: track.url,
+      time
+    };
   }
 };
