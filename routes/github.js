@@ -4,6 +4,7 @@ const moment = require('moment');
 module.exports = {
   method: 'GET',
   path: '/api/github',
+  /* jshint ignore:start */
   handler: async (request, h) => {
     const res = await service.call();
     if (!res) return {};
@@ -17,4 +18,5 @@ module.exports = {
       link: `https://github.com/${res.repo.name}/commit/${commits[0].sha}`
     };
   }
+  /* jshint ignore:end */
 };

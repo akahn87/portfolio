@@ -12,6 +12,7 @@ const server = Hapi.server({
   port: parseInt(process.env.PORT, RADIX) || DEFAULT_PORT,
 });
 
+/* jshint ignore:start */
 const start = async () => {
   try {
     await server.register(Vision); // template rendering
@@ -42,3 +43,4 @@ const start = async () => {
 };
 
 start();
+/* jshint ignore:end */

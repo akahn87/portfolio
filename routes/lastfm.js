@@ -4,6 +4,7 @@ const moment = require('moment');
 module.exports = {
   method: 'GET',
   path: '/api/lastfm',
+  /* jshint ignore:start */
   handler: async (request, h) => {
     const res = await service.call();
     if (!res) return {};
@@ -31,4 +32,5 @@ module.exports = {
       time
     };
   }
+  /* jshint ignore:end */
 };

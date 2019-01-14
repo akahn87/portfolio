@@ -4,7 +4,7 @@ class CachedService {
     this.ttl = typeof ttl === 'undefined' ? 1000 * 60 * 2.5 : ttl;
   }
 
-  async call(cb) {
+  async call(cb) { // jshint ignore:line
     const self = this;
     const now = new Date().getTime();
 
@@ -14,7 +14,7 @@ class CachedService {
 
     this.lastReqTime = now;
 
-    self.res = await this.service.call();
+    self.res = await this.service.call(); // jshint ignore:line
 
     return self.res;
   }

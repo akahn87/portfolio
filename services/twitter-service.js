@@ -19,7 +19,7 @@ class TwitterService {
     };
   }
 
-  async call() {
+  async call() { // jshint ignore:line
     return this.twit.get(this.endpoint, this.params);
   }
 }

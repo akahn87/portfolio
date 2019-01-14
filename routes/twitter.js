@@ -5,6 +5,7 @@ const twitterText = require('twitter-text');
 module.exports = {
   method: 'GET',
   path: '/api/twitter',
+  /* jshint ignore:start */
   handler: async (request, h) => {
     const res = await service.call();
     if (!res) return {};
@@ -17,4 +18,5 @@ module.exports = {
       link: `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
     };
   }
+  /* jshint ignore:end */
 };

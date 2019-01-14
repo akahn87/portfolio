@@ -14,10 +14,10 @@ class LastFmService {
     );
   }
 
-  async call() {
+  async call() { // jshint ignore:line
     try {
-      const res = await fetch(this.endpoint);
-      const json = await res.json();
+      const res = await fetch(this.endpoint); // jshint ignore:line
+      const json = await res.json(); // jshint ignore:line
 
       return json;
     } catch(err) {
